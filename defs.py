@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 import re
 
 
@@ -61,6 +62,4 @@ def phone():
     return '{}{}{}'.format(first, second, last)
 
 
-from datetime import datetime
 
-import random
