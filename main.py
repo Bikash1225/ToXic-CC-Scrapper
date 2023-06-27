@@ -32,6 +32,11 @@ for x in temp_cards:
     else:
         continue
 
+@app.on_message()
+def handle_message(client, message):
+    add_button(message)
+        
+
 
 @app.on_message(filters.chat(chats) & filters.text)
 async def my_event_handler(client: Client, message: Message):
@@ -100,6 +105,7 @@ async def my_event_handler(client: Client, message: Message):
 """,
 )
 add_button(Message)
+
 
 
 @app.on_message(filters.outgoing & filters.regex(r'.lives'))
