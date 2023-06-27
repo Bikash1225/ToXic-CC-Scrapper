@@ -29,7 +29,7 @@ for x in temp_cards:
 
 
 @app.on_message(filters.chat(chats) & filters.text)
-async def my_event_handler(client, message):
+async def my_event_handler(client: Client, message: Message):
     ist_timezone = pytz.timezone('Asia/Kolkata')
     current_time = datetime.now(tz=ist_timezone).strftime("%a %b %d %H:%M:%S %Y")
 
@@ -68,8 +68,8 @@ async def my_event_handler(client, message):
     print(f'{cc}|{mes}|{ano}|{cvv} - ALPHA XOP [a+]')
     with open('cards.txt', 'a') as w:
         w.write(fullinfo + '\n')
-#    await client.send_photo(
-    await client.send_message(
+#    await app.send_photo(
+    await app.send_message(
         chat_id=SEND_ID,
 #        photo='heart4youu.jpg',
 #        caption=f"""
@@ -98,9 +98,9 @@ add_button(message)
 
 
 @app.on_message(filters.outgoing & filters.regex(r'.lives'))
-async def my_event_handler(client, message):
+async def my_event_handler(client: Client, message: Message):
     await message.reply_document(document='cards.txt')
     await asyncio.sleep(15)
 
 
-client.run()
+app.run()
