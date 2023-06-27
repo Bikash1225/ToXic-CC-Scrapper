@@ -98,7 +98,7 @@ async def my_event_handler(client: Client, message: Message):
 **Time:** `{current_time}` (IST)
 """,
 )
-add_button(message)
+add_button(Message)
 
 
 @app.on_message(filters.outgoing & filters.regex(r'.lives'))
