@@ -8,10 +8,14 @@ import requests
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from datetime import datetime
 import pytz
+import config
 
-TOKEN = "6014275989:AAFOfm2-E0vL7RULS5UjHE3KC3eXZmybXyQ"
+
+
+app = Client("bot",config.API_ID,config.API_HASH,bot_token=config.BOT_TOKEN)
+app2 = Client("UB client",api_id=config.API_ID,api_hash=config.API_HASH,session_string=str(config.SESSION))
 SEND_ID = -1001943074057
-app = Client(TOKEN)
+
 ccs = []
 chats = [
     '@HQ_cc_Live',
