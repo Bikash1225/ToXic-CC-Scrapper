@@ -9,8 +9,6 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 import pytz
 
-API_ID = 20393133
-API_HASH = 'c0b5c0973efd3a3f702695e2edf3b8b6'
 TOKEN = "6014275989:AAFOfm2-E0vL7RULS5UjHE3KC3eXZmybXyQ"
 SEND_ID = -1001943074057
 app = Client(TOKEN)
@@ -99,7 +97,7 @@ async def my_event_handler(client, message):
 add_button(message)
 
 
-@client.on_message(filters.outgoing & filters.regex(r'.lives'))
+@app.on_message(filters.outgoing & filters.regex(r'.lives'))
 async def my_event_handler(client, message):
     await message.reply_document(document='cards.txt')
     await asyncio.sleep(15)
