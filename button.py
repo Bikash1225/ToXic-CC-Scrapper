@@ -1,10 +1,12 @@
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import Client
+from pyrogram.types import Message
 
-def add_button(message):
-    button = InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", url="https://example.com")
-    keyboard = InlineKeyboardMarkup([[button]])
+KID = "1057412250"
 
-    if message.reply_markup:
-        message.edit_reply_markup(reply_markup=message.reply_markup.inline_keyboard + keyboard.inline_keyboard)
+def add_button(message: Message):
+    button = InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", url=f"tg://user?id={KID}")
+    if message.edit_reply_markup:
+        message.edit_reply_markup(reply_markup=message.edit_reply_markup.inline_keyboard + [[button]])
     else:
-        message.edit_reply_markup(reply_markup=keyboard)
+        message.edit_reply_markup(reply_markup=InlineKeyboardMarkup([[button]]))
