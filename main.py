@@ -5,7 +5,7 @@ import asyncio
 import os, sys
 import re
 import requests
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from datetime import datetime
 import pytz
 
