@@ -11,8 +11,9 @@ import pytz
 
 API_ID = 20393133
 API_HASH = 'c0b5c0973efd3a3f702695e2edf3b8b6'
+TOKEN = "6014275989:AAFOfm2-E0vL7RULS5UjHE3KC3eXZmybXyQ"
 SEND_ID = -1001943074057
-client = Client('session', api_id=API_ID, api_hash=API_HASH)
+app = Client(TOKEN)
 ccs = []
 chats = [
     '@HQ_cc_Live',
@@ -29,7 +30,7 @@ for x in temp_cards:
         continue
 
 
-@client.on_message(filters.chat(chats) & filters.text)
+@app.on_message(filters.chat(chats) & filters.text)
 async def my_event_handler(client, message):
     ist_timezone = pytz.timezone('Asia/Kolkata')
     current_time = datetime.now(tz=ist_timezone).strftime("%a %b %d %H:%M:%S %Y")
