@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 KID = "1057412250"
 
 
-def handle_message(client, message):
+def handle_message(message):
     button = InlineKeyboardButton(text="🥀 ᴅᴇᴠᴇʟᴏᴩᴇʀ 🥀", url=f"tg://user?id={KID}")
 
     if message.reply_markup:
